@@ -1,25 +1,22 @@
 def calculateCompoundInterest():
-    print("Compound Interest: "+ find_compound_interest())
+    single_calculation_of_compound_interest()
     print('---')
-    print("Compound Interest: "+ find_compound_interest())
+    single_calculation_of_compound_interest()
     print('---')
-    print("Compound Interest: "+ find_compound_interest())
+    single_calculation_of_compound_interest()
 
-def find_compound_interest():
-    
-    principle = float(input("Principle (amount): "))
-    time =      float(input("Time:               "))
-    rate =      float(input("Rate:               "))
- 
-    total_amount = (((rate/100) + 1)**time)*principle
+def single_calculation_of_compound_interest():    
+    client_initial_principal = float(input("Principle (amount): "))
+    client_time =      float(input("Time:               "))
+    client_rate =      float(input("Rate:               "))
 
-    compound_interest = total_amount - principle
-    compound_interest = round(compound_interest,2)
-    
-    return str(compound_interest)
+    client_ending_principal = client_initial_principal*((1+(client_rate/100))**client_time)
+    client_compound_interest = client_ending_principal - client_initial_principal
+    rounded_client_compound_interest = round(client_compound_interest, 2)
+    print(f"Compound Interest: {rounded_client_compound_interest}")
 
-    # end assignment
+## If you want to test locally run > python compoundInterest.py
 
 if __name__ == "__main__":
     calculateCompoundInterest()
-    
+
